@@ -1,0 +1,81 @@
+body {
+    font-family: 'Poppins';
+    padding: 1vh;
+    background-image: url(bg_image.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.page_header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3vh;
+}
+
+.page_header p {
+    color: whitesmoke;
+    font-size: 4vh;
+    font-weight: 700;
+    margin: 0.5vh 0vh;
+}
+
+.form_body {
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 1vh;
+    width: 50vh;
+    padding: 2vh;
+}
+
+.form_body label {
+    font-size: 1.6vh;
+    font-weight: 500;
+}
+
+.form_body input {
+    color: grey;
+    padding: 1vh;
+    margin-top: 0.1vh;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.6vh;
+    border: 0.1vh solid grey;
+    border-radius: 0.1vh;
+    box-shadow: 12px gray;
+}
+
+.fullname,
+.emailaddress,
+.password,
+.submit_btn {
+    padding: 1vh 1vh;
+    font-size: 1vh;
+    flex: 1;
+}
+
+.submit_btn button {
+    flex: 1;
+    padding: 1vh;
+    margin: 1vh;
+    font-size: 2vh;
+    background-color: rgb(28, 41, 65);
+    color: white;
+    border: 0 solid;
+    border-radius: 3vh;
+    font-weight: 200;
+}
+
+@media (max-width: 420px) {
+    .form_body {
+        width: 40vh;
+    }
+
+    .page_header p {
+        font-size: 2.5vh;
+    }
+}
