@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins';
+    background-image: url(/images/bg_image.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.form_body {
+    height: 80vh;
+    width: 35vw;
+    background-color: white;
+    border-radius: 0.8vh;
+    padding: 6rem 6rem;
+}
+
+.page_header p {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 3rem ;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    width: 100%;
+}
+
+.form_body label {
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+
+.form_body input,
+select {
+    color: grey;
+    padding: 1rem 2rem;
+    height: 4.5vh;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.8rem;
+    border: 0.1vh solid grey;
+    border-radius: 0.5vh;
+}
+
+.mob_and_dob,
+.country_and_postal {
+    display: flex;
+}
+
+.country_and_postal {
+    margin-top: 1rem;
+}
+
+.mobile,
+.country {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.postal,
+.dob {
+    flex: 1;
+}
+
+.gender_radio {
+    display: flex;
+    gap: 1rem;
+}
+
+.gender_radio input {
+    width: 1rem;
+    height: 100%;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+    font-weight: 400;
+    accent-color: darkblue;
+}
+
+.gender_radio label {
+    margin-left: 0.2rem;
+    margin-right: 2 rem;
+    font-size: 1.5vh;
+    padding: 0px;
+    font-weight: 400;
+    color: grey;
+}
+
+.submit_btn input {
+    flex: 1;
+    height: 4.5vh;
+    border-radius: 3rem;
+    background-color: rgb(28, 41, 65);
+    color: white;
+    font-size: 2.6rem;
+    font-weight: 200;
+}
+
+@media (max-width: 1300px) {
+    html {
+        font-size: 6px;
+    }
+
+    .form_body {
+        width: 80vw;
+        max-width: 400px;
+    }
+}
+
+@media (max-width: 575px) {
+    html {
+        font-size: 6px;
+    }
+
+    .form_body {
+        width: 70vw;
+    }
+}

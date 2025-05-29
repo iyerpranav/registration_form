@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins'; 
+    background-image: url(/images/bg_image.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.page_header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3vh;
+}
+
+.page_header p {
+    color: whitesmoke;
+    font-size: 5rem;
+    font-weight: 700;
+}
+
+.form_body {
+    box-sizing: border-box;
+    background-color: white;
+    border-radius: 2rem;
+    padding: 4rem;
+    width: 40vw;
+    /* display: flex; */
+    flex: 0 0 auto;
+}
+
+
+form {
+    height: 26vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.form_body label {
+    font-size: 2.2rem;
+    font-weight: 500;
+}
+
+.form_body input {
+    color: grey;
+    padding: 1.3rem;
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 1.6rem;
+    border: 0.1rem solid grey;
+    border-radius: 0.3rem;
+    box-shadow: 12px gray;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+}
+
+.login button {
+    flex: 1;
+    padding: 1rem;
+    margin: 1rem;
+    font-size: 2rem;
+    background-color: rgb(28, 41, 65);
+    color: white;
+    border: 0 solid;
+    border-radius: 3vh;
+    font-weight: 200;
+}
+
+.links {
+    display: flex;
+    justify-content: space-around;
+}
+
+.links label {
+    font-size: 1.8rem;
+}
+
+@media (max-width: 1300px) {
+    html {
+        font-size: 6px;
+    }
+
+    .form_body {
+        width: 80vw;
+        max-width: 350px;
+    }
+
+    .page_header p {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 420px) {
+    html {
+        font-size: 6px;
+    }
+
+    .form_body {
+        width: 90vw;
+    }
+    
+    form {
+        height: 23vh;
+    }
+
+    .page_header p {
+        font-size: 3rem;
+    }
+}
