@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registration form</title>
     <link rel="stylesheet" href="/styles/styles2.css">
@@ -20,8 +20,8 @@
         </div>
         <form action="/newuser" method="POST">
             <div class="fullname">
-                <label for="fname">Full Name</label> <br>
-                <input type="text" name="fname" id="fname" placeholder="Enter Full Name">
+                <label for="name">Full Name</label> <br>
+                <input type="text" name="name" id="name" placeholder="Enter Full Name">
             </div>
 
             <div class="emailaddress">
@@ -38,6 +38,7 @@
                 <div class="mobile">
                     <label for="mobile">Mobile Number</label> <br>
                     <input type="tel" name="mobile" id="mobile" placeholder="Enter Mobile Number">
+                    <input type="hidden" id="mobCode" name="mobCode">
                 </div>
                 <div class="dob">
                     <label for="dob">Birth Date</label> <br>
@@ -50,12 +51,12 @@
                     <label for="gender">Gender</label><br>
                 </div>
                 <div class="gender_radio">
-                    <input type="radio" id="male" name="gender" value="Male">
+                    <input type="radio" id="male" name="gender" value="M">
                     <label for="male">Male</label>
-                    <input type="radio" id="female" name="gender" value="Female">
+                    <input type="radio" id="female" name="gender" value="F">
                     <label for="female">Female</label>
-                    <input type="radio" id="na" name="gender" value="Prefer not to say">
-                    <label for="na">Prefer not to say</label>
+                    <input type="radio" id="na" name="gender" value="O">
+                    <label for="na">Other</label>
                 </div>
             </div>
 
@@ -65,14 +66,10 @@
 
                 <div class="country_and_postal">
                     <div class="country">
-                        <select name="country" id="country">
-                            <option value="">Country</option>
-                            <option value="US">United States</option>
-                            <option value="IN">India</option>
-                            <option value="GB">United Kingdom</option>
-                            <option value="CA">Canada</option>
-                            <option value="AU">Australia</option>
-                        </select>
+                        <input id="countryName" type="text" list="countries" placeholder="Enter Country">
+                        <input type="hidden" id="countryCode" name="country">
+                        <datalist id="countries">
+                        </datalist>
                     </div>
                     <div class="postal">
                         <input type="text" name="postal" id="postal" placeholder="Enter Postal Code">
@@ -85,6 +82,8 @@
             </div>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/scripts/script.js"></script>
 </body>
 
 </html>

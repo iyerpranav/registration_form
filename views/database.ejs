@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>System Database</title>
+  <link rel="stylesheet" href="/styles/styles3.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <h1>Registered Users</h1>
+  <div id="table-holder">
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th>id</th>
+          <th>fname</th>
+          <th>lname</th>
+          <th>email</th>
+          <th>password_hash</th>
+          <th>mobile</th>
+          <th>dob</th>
+          <th>gender</th>
+          <th>address</th>
+          <th>country</th>
+          <th>postal_code</th>
+          <th>created_at</th>
+          <th>role</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% users.forEach(function(user) { %>
+          <tr>
+            <td>
+              <form action="/login/update/<%= user.id %>" method="GET">
+                <button type="submit" class="upd">U
+                  <p class="tooltip">Update</p>
+                </button>
+              </form>
+            </td>
+            <td>
+              <form action="/login/delete/<%= user.id %>?_method=DELETE" method="POST">
+                <button type="submit" class="del">D
+                  <p class="tooltip">Delete</p>
+                </button>
+              </form>
+            </td>
+            <td>
+              <%= user.id %>
+            </td>
+            <td>
+              <%= user.fname %>
+            </td>
+            <td>
+              <%= user.lname %>
+            </td>
+            <td>
+              <%= user.email %>
+            </td>
+            <td>
+              <%= user.password_hash %>
+            </td>
+            <td>
+              <%= user.mobile %>
+            </td>
+            <td>
+              <%= user.dob %>
+            </td>
+            <td>
+              <%= user.gender %>
+            </td>
+            <td>
+              <%= user.address %>
+            </td>
+            <td>
+              <%= user.country %>
+            </td>
+            <td>
+              <%= user.postal_code %>
+            </td>
+            <td>
+              <%= user.created_at %>
+            </td>
+            <td>
+              <%= user.role %>
+            </td>
+          </tr>
+          <% }); %>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="/scripts/script1.js"></script>
+</body>
+
+</html>

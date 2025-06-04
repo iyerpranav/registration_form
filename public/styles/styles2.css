@@ -16,7 +16,7 @@ body {
 }
 
 .form_body {
-    height: 80vh;
+    height: 600px;
     width: 35vw;
     background-color: white;
     border-radius: 0.8vh;
@@ -26,14 +26,13 @@ body {
 .page_header p {
     font-size: 4rem;
     font-weight: 700;
-    margin-bottom: 3rem ;
+    margin-bottom: 2rem;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 3rem;
-    width: 100%;
+    gap: 2rem;
 }
 
 .form_body label {
@@ -41,11 +40,10 @@ form {
     font-weight: 500;
 }
 
-.form_body input,
-select {
+.form_body input {
     color: grey;
     padding: 1rem 2rem;
-    height: 4.5vh;
+    height: 5vh;
     width: 100%;
     box-sizing: border-box;
     font-size: 1.8rem;
@@ -89,8 +87,8 @@ select {
 
 .gender_radio label {
     margin-left: 0.2rem;
-    margin-right: 2 rem;
-    font-size: 1.5vh;
+    margin-right: 2rem;
+    font-size: 1.5rem;
     padding: 0px;
     font-weight: 400;
     color: grey;
@@ -98,7 +96,6 @@ select {
 
 .submit_btn input {
     flex: 1;
-    height: 4.5vh;
     border-radius: 3rem;
     background-color: rgb(28, 41, 65);
     color: white;
@@ -106,9 +103,9 @@ select {
     font-weight: 200;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 4000px) {
     html {
-        font-size: 6px;
+        font-size: 7px;
     }
 
     .form_body {
@@ -124,5 +121,9 @@ select {
 
     .form_body {
         width: 70vw;
+    }
+
+    form {
+        gap: 3.4rem;    
     }
 }

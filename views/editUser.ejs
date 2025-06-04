@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="/styles/styles4.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="form_body">
+        <div class="page_header" style="display: flex; justify-content: center;">
+            <p>Edit User [ID = <%= user.id %>] </p>
+        </div>
+        <form action="/login/edituser/<%= user.id %>?_method=PATCH" method="POST">
+            <div class="fullname">
+                <div class="fname">
+                    <label for="fname">First Name</label> <br>
+                    <input type="text" name="fname" id="fname" value="<%= user.fname %>">
+                </div>
+                <div class="lname">
+                    <label for="lname">Last Name</label> <br>
+                    <input type="text" name="lname" id="lname" value="<%= user.lname %>">
+                </div>
+            </div>
+
+            <div class="emailaddress">
+                <label for="email">Email Address</label> <br>
+                <input type="email" name="email" id="email" value="<%= user.email %> ">
+            </div>
+
+            <div class="password">
+                <label for="passwd">Password</label> <br>
+                <input type="password" name="passwd" id="passwd" value="<%= user.password_hash %>">
+            </div>
+
+            <div class="mob_and_dob">
+                <div class="mobile">
+                    <label for="mobile">Mobile Number</label> <br>
+                    <input type="tel" name="mobile" id="mobile" value="<%= user.mobile.split(' ')[1] %>">
+                    <input type="hidden" name="mobCode" id="mobCode" value="<%= user.mobile.split(' ')[0] %>">
+                </div>
+                <div class="dob">
+                    <label for="dob">Birth Date</label> <br>
+                    <input type="date" name="dob" id="dob"
+                        value="<%= new Date(user.dob).toISOString().split('T')[0] %>">
+                </div>
+            </div>
+
+            <div class="gender">
+                <label for="gender">Gender</label><br>
+                <select name="gender" id="gender">
+                    <option value="M" <% if(user.gender==='M' ){ %> selected <% } %>>Male</option>
+                    <option value="F" <% if(user.gender==='F' ){ %> selected <% } %>>Female</option>
+                    <option value="O" <% if(user.gender==='O' ){ %> selected <% } %>>Other</option>
+                </select>
+            </div>
+
+            <div class="address">
+                <label for="address">Address</label><br>
+                <input type="text" name="address" id="address" value="<%= user.address %>">
+
+                <div class="country_and_postal">
+                    <div class="country">
+                        <input id="countryName" type="text" list="countries">
+                        <input type="hidden" id="countryCode" name="country" value="<%= user.country %>">
+                        <datalist id="countries">
+                        </datalist>
+                    </div>
+                    <div class="postal">
+                        <input type="text" name="postal" id="postal" value="<%= user.postal_code %>">
+                    </div>
+                </div>
+            </div>
+
+            <div class="submit_btn" style="display: flex;">
+                <input type="submit">
+            </div>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/scripts/script.js"></script>
+</body>
+
+</html>

@@ -33,13 +33,12 @@ body {
     border-radius: 2rem;
     padding: 4rem;
     width: 40vw;
-    /* display: flex; */
     flex: 0 0 auto;
 }
 
 
 form {
-    height: 26vh;
+    height: 200px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -89,14 +88,14 @@ form {
     font-size: 1.8rem;
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 4000px) {
     html {
-        font-size: 6px;
+        font-size: 7px;
     }
 
     .form_body {
         width: 80vw;
-        max-width: 350px;
+        max-width: 400px;
     }
 
     .page_header p {
