@@ -21,28 +21,28 @@
         <form action="/newuser" method="POST">
             <div class="fullname">
                 <label for="name">Full Name</label> <br>
-                <input type="text" name="name" id="name" placeholder="Enter Full Name">
+                <input type="text" name="name" id="name" placeholder="Enter Full Name" required pattern="^[A-Za-z]+ [A-Za-z]+$">
             </div>
 
             <div class="emailaddress">
                 <label for="email">Email Address</label> <br>
-                <input type="email" name="email" id="email" placeholder="Enter Email Address">
+                <input type="email" name="email" id="email" placeholder="Enter Email Address" required>
             </div>
 
             <div class="password">
                 <label for="passwd">Set Password</label> <br>
-                <input type="password" name="passwd" id="passwd" placeholder="Enter Password">
+                <input type="password" name="passwd" id="passwd" placeholder="Enter Password" required minlength="8">
             </div>
 
             <div class="mob_and_dob">
                 <div class="mobile">
                     <label for="mobile">Mobile Number</label> <br>
-                    <input type="tel" name="mobile" id="mobile" placeholder="Enter Mobile Number">
+                    <input type="tel" name="mobile" id="mobile" placeholder="Enter Mobile Number" required pattern="[0-9]{10}">
                     <input type="hidden" id="mobCode" name="mobCode">
                 </div>
                 <div class="dob">
                     <label for="dob">Birth Date</label> <br>
-                    <input type="date" name="dob" id="dob">
+                    <input type="date" name="dob" id="dob" required max="2007-12-31">
                 </div>
             </div>
 
@@ -51,7 +51,7 @@
                     <label for="gender">Gender</label><br>
                 </div>
                 <div class="gender_radio">
-                    <input type="radio" id="male" name="gender" value="M">
+                    <input type="radio" id="male" name="gender" value="M" required>
                     <label for="male">Male</label>
                     <input type="radio" id="female" name="gender" value="F">
                     <label for="female">Female</label>
@@ -62,17 +62,17 @@
 
             <div class="address">
                 <label for="address">Address</label><br>
-                <input type="text" name="address" id="address" placeholder="Enter Address">
+                <input type="text" name="address" id="address" placeholder="Enter Address" required>
 
                 <div class="country_and_postal">
                     <div class="country">
-                        <input id="countryName" type="text" list="countries" placeholder="Enter Country">
+                        <input id="countryName" type="text" list="countries" placeholder="Enter Country" required>
                         <input type="hidden" id="countryCode" name="country">
                         <datalist id="countries">
                         </datalist>
                     </div>
                     <div class="postal">
-                        <input type="text" name="postal" id="postal" placeholder="Enter Postal Code">
+                        <input type="text" name="postal" id="postal" placeholder="Enter Postal Code" required pattern="[0-9]{4,10}">
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>System Database</title>
+  <title>User Database</title>
   <link rel="stylesheet" href="/styles/styles3.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,40 +14,40 @@
 </head>
 
 <body>
-  <h1>Registered Users</h1>
+  <header>
+    <h1>Registered Users</h1>
+    <div class="hamburger">
+      <img src="/images/burger_menu.svg" width="40px">
+      <div id="menu" class="dropdown">
+        <a href="/admin/product/newproduct">Products</a>
+        <a href="/admin/index/logout">Logout</a>
+      </div>
+    </div>
+  </header>
+
   <div id="table-holder">
     <table>
       <thead>
         <tr>
           <th></th>
           <th></th>
-          <th>id</th>
-          <th>fname</th>
-          <th>lname</th>
-          <th>email</th>
-          <th>password_hash</th>
-          <th>mobile</th>
-          <th>dob</th>
-          <th>gender</th>
-          <th>address</th>
-          <th>country</th>
-          <th>postal_code</th>
-          <th>created_at</th>
-          <th>role</th>
+          <% cols.forEach(function(colname) { %>
+            <th><%= colname %></th>
+          <% }) %>
         </tr>
       </thead>
       <tbody>
         <% users.forEach(function(user) { %>
           <tr>
             <td>
-              <form action="/login/update/<%= user.id %>" method="GET">
+              <form action="/admin/<%= table %>/update/<%= user.id %>" method="GET">
                 <button type="submit" class="upd">U
                   <p class="tooltip">Update</p>
                 </button>
               </form>
             </td>
             <td>
-              <form action="/login/delete/<%= user.id %>?_method=DELETE" method="POST">
+              <form action="/admin/<%= table %>/delete/<%= user.id %>?_method=DELETE" method="POST">
                 <button type="submit" class="del">D
                   <p class="tooltip">Delete</p>
                 </button>
@@ -93,7 +93,7 @@
               <%= user.role %>
             </td>
           </tr>
-          <% }); %>
+          <% }) %>
       </tbody>
     </table>
   </div>

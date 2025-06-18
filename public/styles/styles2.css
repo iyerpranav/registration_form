@@ -16,8 +16,8 @@ body {
 }
 
 .form_body {
-    height: 600px;
-    width: 35vw;
+    max-height: 90vh;
+    max-width: 30vw;
     background-color: white;
     border-radius: 0.8vh;
     padding: 6rem 6rem;
@@ -40,7 +40,7 @@ form {
     font-weight: 500;
 }
 
-.form_body input {
+.form_body input:not([type="radio"]):not([type="submit"]) {
     color: grey;
     padding: 1rem 2rem;
     height: 5vh;
@@ -96,6 +96,7 @@ form {
 
 .submit_btn input {
     flex: 1;
+    padding: 1rem;
     border-radius: 3rem;
     background-color: rgb(28, 41, 65);
     color: white;
@@ -125,5 +126,9 @@ form {
 
     form {
         gap: 3.4rem;    
+    }
+
+    .form_body input:not([type="radio"]):not([type="submit"]) {
+        height: 3.8vh;
     }
 }

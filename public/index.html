@@ -18,15 +18,15 @@
         <p>Enter your details to log in.</p>
     </div>
     <div class="form_body">
-        <form action="/login" method="POST">
+        <form action="/admin" method="POST">
             <div class="emailaddress">
                 <label for="email">Email Address</label> <br>
-                <input type="email" name="email" id="email" placeholder="Enter Email Address">
+                <input type="email" name="email" id="email" placeholder="Enter Email Address" required>
             </div>
 
             <div class="password">
                 <label for="passwd">Your Password</label> <br>
-                <input type="password" name="passwd" id="passwd" placeholder="Enter Password">
+                <input type="password" name="passwd" id="passwd" placeholder="Enter Password" required>
             </div>
 
             <div class="login" style="display: flex;">
